@@ -17,7 +17,7 @@
 {{--                    {{ __('You are logged in!') }}--}}
 {{--                </div>--}}
 
-                @foreach($movies as $movieKey => $movie)
+                @foreach($question as $movieKey => $movie)
                     <div class="form-check" id="{{$this->imdb_title_id}}">
                         <p>Who is the director of {{$movie->title}} movie which published in {{$movie->year}} in {{$movie->country}}?</p>
                         @foreach($movie->directorQuiz as $answerKey => $answer)
