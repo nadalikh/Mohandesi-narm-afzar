@@ -20,7 +20,7 @@
 
                 <div class="form-check" id="{{$question->imdb_title_id}}">
                     <p>Who is the director of {{$question->title}} movie which published in {{$question->year}} in {{$question->country}}?</p>
-                    <div class="row">
+                    <div class="row justify-content-around">
                         @foreach($answers as $answerKey => $answer)
                             <div class="col-5">
                                 <input class="form-check-input" type="radio" name="{{$answer->director}}" id="{{$answer->director}}" value="{{$answer->director}}">
