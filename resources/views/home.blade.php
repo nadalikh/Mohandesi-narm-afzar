@@ -23,7 +23,7 @@
                     <div class="row justify-content-around">
                         @foreach($answers as $answerKey => $answer)
                             <div class="col-5">
-                                <input class="form-check-input" type="radio" name="{{$answer->director}}" id="{{$answer->director}}" value="{{$answer->director}}">
+                                <input class="form-check-input" type="radio" name="{{$question->director}}" id="{{$answer->director}}" value="{{$answer->director}}">
                                 <label class="form-check-label" for="{{$answer->director}}">
                                     {{$answer->director}}
                                 </label>
