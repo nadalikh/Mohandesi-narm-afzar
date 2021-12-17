@@ -10,9 +10,9 @@ class movie extends Model
     use HasFactory;
     public function directorQuiz(){
         $answers = array();
-        dd($this->director);
         $answers[] = $this->director;
         $answers[] = $this::where(['director', "!=", $this->director])->first();
+        dd($this->director);
         $answers[] = $this::where(['director', "!=", $answers[0]->director])->first();
         $answers[] = $this::where(['director', "!=", $answers[1]->director])->first();
         shuffle($answers);
