@@ -25,7 +25,6 @@ class HomeController extends Controller
     public function index()
     {
         $question = movie::all()->random(2);
-        dd($question);
         return view('home', compact('question'));
     }
 

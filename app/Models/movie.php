@@ -9,14 +9,21 @@ class movie extends Model
 {
     use HasFactory;
     public function directorQuiz(){
-        $answers = $this::all()->random(3);
-        $found = true;
-        while($found){
-            foreach($answers as $ans)
-                foreach($answers as $a)
-                    if($a->imdb_title_id == $ans->imdb_title_id){
-
-                    }
-        }
+        $answers = array();
+        $answers[] = $this->director;
+        $answers[] = $this::where(['director', "!=", $this->director])->first();
+        $answers[] = $this::where(['director', "!=", $answers[0]->director])->first();
+        $answers[] = $this::where(['director', "!=", $answers[1]->director])->first();
+        shuffle($answers);
+        return $answers;
+//        $found = true;
+//        while($found){
+//            foreach($answers as $ans) {
+//                foreach ($answers as $a)
+//                    if ($a->director == $ans->director) {
+//
+//                    }
+//            }
+//        }
     }
 }
