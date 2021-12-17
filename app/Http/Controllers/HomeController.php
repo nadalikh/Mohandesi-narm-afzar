@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\movie;
 use Illuminate\Http\Request;
-
+use functions;
 class HomeController extends Controller
 {
     /**
@@ -22,10 +22,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        $question = movie::all()->random(2);
-        return view('home', compact('question'));
+    public function index($status){
+        $question = movie::all()->random(1)->first();
+        $answers = functions::directorQuiz($question);
+        return view('home', compact('question', "answers"));
     }
-
 }
