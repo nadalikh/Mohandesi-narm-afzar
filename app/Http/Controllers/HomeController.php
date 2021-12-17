@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\movie;
 use Illuminate\Http\Request;
-use functions;
+use App\Http\functions;
 class HomeController extends Controller
 {
     /**

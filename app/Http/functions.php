@@ -1,7 +1,11 @@
 <?php
-use App\Models\movie;
-class functions{
-    static function directorQuiz($movie){
+
+namespace App\Http;
+
+class functions
+{
+    static function directorQuiz($movie)
+    {
         $answers = array();
         $answers[] = $movie;
         $answers[] = $movie::where('director', "!=", $movie->director)->first();
