@@ -11,7 +11,7 @@ class movie extends Model
     public function directorQuiz(){
         $answers = array();
         $answers[] = $this;
-        $answers[] = $this::where(['director', "!=", $this->director])->first();
+        $answers[] = $this::where('director', "!=", $this->director)->first();
         $answers[] = $this::where('director', "!=", $answers[0]->director)->first();
         $answers[] = $this::where('director', "!=", $answers[1]->director)->first();
         shuffle($answers);
