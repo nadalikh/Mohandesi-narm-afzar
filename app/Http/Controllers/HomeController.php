@@ -20,7 +20,6 @@ class HomeController extends Controller
     public function index(){
         $question = movie::all()->random(1)->first();
         $answers = functions::directorQuiz($question);
-        dd($answers);
         return view('home', compact('question', "answers"));
     }
 }
