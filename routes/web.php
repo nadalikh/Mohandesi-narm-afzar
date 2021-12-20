@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/director', [\App\Http\Controllers\HomeController::class, "answerValidation"])->name("directorAns");
+Route::get('/director', [App\Http\Controllers\HomeController::class, "answerValidation"])->name("directorAns");
 
 Auth::routes();
 
