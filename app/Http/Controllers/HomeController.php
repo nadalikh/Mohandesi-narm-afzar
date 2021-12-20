@@ -22,4 +22,11 @@ class HomeController extends Controller
         $answers = functions::directorQuiz($question);
         return view('home', compact('question', "answers"));
     }
+    public function answerValidation(Request $request){
+        $req = $request->validate([
+            "director"=>"required"
+        ]);
+        dd($req);
+
+    }
 }

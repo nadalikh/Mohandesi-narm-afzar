@@ -18,19 +18,20 @@
 {{--                </div>--}}
 
 
-                <div class="form-check" id="{{$question->imdb_title_id}}">
+                <form method="get" action="{{route("dirctorAns")}}" class="form-check" id="{{$question->imdb_title_id}}">
                     <p>Who is the director of {{$question->title}} movie which published in {{$question->year}} in {{$question->country}}?</p>
                     <div class="row justify-content-around">
                         @foreach($answers as $answerKey => $answer)
                             <div class="col-5">
-                                <input class="form-check-input" type="radio" name="{{$question->director}}" id="{{$answer->director}}" value="{{$answer->director}}">
+                                <input class="form-check-input" type="radio" name="director" id="{{$answer->director}}" value="{{$answer->director}}">
                                 <label class="form-check-label" for="{{$answer->director}}">
                                     {{$answer->director}}
                                 </label>
                             </div>
                         @endforeach
+                        <button class="btn btn-primary" type="submit">confirm</button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
