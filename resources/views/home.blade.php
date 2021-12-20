@@ -29,8 +29,8 @@
                                 </label>
                             </div>
                         @endforeach
-                        <button class="btn btn-primary" type="submit">confirm</button>
                     </div>
+                    <button class="btn btn-primary" type="submit">confirm</button>
                 </form>
             </div>
         </div>
