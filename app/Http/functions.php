@@ -2,17 +2,20 @@
 
 namespace App\Http;
 
+use App\Models\movie;
+
 class functions
 {
-    static function directorQuiz($movie)
+     static function directorQuestion()
     {
-        $answers = array();
-
+        $movie = movie::all()->random(1);
+        $answers = $quiz = array();
         $answers[] = $movie::where('director', "!=", $movie->director)->inRandomOrder()->first();
         $answers[] = $movie::where([['director', "!=", $answers[0]->director],['director', "!=", $movie->director]])->inRandomOrder()->first();
         $answers[] = $movie::where([['director', "!=", $answers[1]->director],['director', "!=", $answers[0]->director],['director', "!=", $movie->director]])->inRandomOrder()->first();
         $answers[] = $movie;
-        shuffle($answers);
-        return $answers;
+        $quiz['answer'] = shuffle($answers);
+        $quiz["question"] = movie::all()->random(1)->first();
+        return $quiz;
     }
 }

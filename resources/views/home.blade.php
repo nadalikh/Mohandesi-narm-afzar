@@ -27,10 +27,10 @@
 
                 @endisset
                 <form method="get" action="{{route("directorAns")}}" class="form-check">
-                    <p>Who is the director of {{$question->title}} movie which published in {{$question->year}} in {{$question->country}}?</p>
-                    <input type="hidden" name="movieId" value="{{$question->imdb_title_id}}">
+                    <p>Who is the director of {{$quiz["question"]->title}} movie which published in {{$quiz["question"]->year}} in {{$quiz["question"]->country}}?</p>
+                    <input type="hidden" name="movieId" value="{{$quiz["question"]->imdb_title_id}}">
                     <div class="row justify-content-around">
-                        @foreach($answers as $answerKey => $answer)
+                        @foreach($quiz["answer"] as $answerKey => $answer)
                             <div class="col-5">
                                 <input class="form-check-input" type="radio" name="director" id="{{$answer->director}}" value="{{$answer->director}}">
                                 <label class="form-check-label" for="{{$answer->director}}">

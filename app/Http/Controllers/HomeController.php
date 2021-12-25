@@ -18,9 +18,8 @@ class HomeController extends Controller
     }
 
     public function index(){
-        $question = movie::all()->random(1)->first();
-        $answers = functions::directorQuiz($question);
-        return view('home', compact('question', "answers"));
+        $quiz = functions::directorQuestion();
+        return view('home', compact('quiz'));
     }
     public function answerValidation(Request $request){
         $req = $request->validate([
