@@ -20,7 +20,7 @@
 
                 <form method="get" action="{{route("directorAns")}}" class="form-check">
                     <p>Who is the director of {{$question->title}} movie which published in {{$question->year}} in {{$question->country}}?</p>
-                    <input type="hidden" name="movieId" value="{{$question->imdb_title_id}}}">
+                    <input type="hidden" name="movieId" value="{{$question->imdb_title_id}}">
                     <div class="row justify-content-around">
                         @foreach($answers as $answerKey => $answer)
                             <div class="col-5">
