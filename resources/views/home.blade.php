@@ -19,15 +19,14 @@
 
                 @isset($status)
                     @if($status)
-                        {{"<script>alert('Well done, you were true.Try this one!!!')</script>"}}
+                        <script>alert('Well done, you were true.Try this one!!!')</script>
                     @else
-                        {{"<script>alert('You were wrong. Compensate on this question :)')</script>"}}
-
+                        <script>alert('You were wrong. Compensate on this question :)')</script>
                     @endif
 
                 @endisset
                 <form method="get" action="{{route("directorAns")}}" class="form-check">
-                    <p>Who is the director of {{$quiz["question"]->title}} movie which published in {{$quiz["question"]->year}} in {{$quiz["question"]->country}}?</p>
+                    <p>Who is the director of {{$quiz["question"]->title}} movie which was published in {{$quiz["question"]->year}} in {{$quiz["question"]->country}}?</p>
                     <input type="hidden" name="movieId" value="{{$quiz["question"]->imdb_title_id}}">
                     <div class="row justify-content-around">
                         @foreach($quiz["answer"] as $answerKey => $answer)
