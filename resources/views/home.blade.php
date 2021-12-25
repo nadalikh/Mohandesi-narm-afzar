@@ -30,7 +30,7 @@
                             </div>
                         @endforeach
                     </div>
-                    <button class="btn btn-primary mt-3" type="submit">confirm</button>
+                    <button class="btn btn-primary my-3" type="submit">confirm</button>
                 </form>
             </div>
         </div>
