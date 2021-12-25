@@ -17,9 +17,9 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
+    public function index($status = null){
         $quiz = functions::directorQuestion();
-        return view('home', compact('quiz'));
+        return view('home', compact('quiz', "status"));
     }
     public function answerValidation(Request $request){
         $req = $request->validate([
@@ -31,6 +31,6 @@ class HomeController extends Controller
             $status = true;
         else
             $status = false;
-        return view('home', compact('status'));
+        $this->index($status);
     }
 }
