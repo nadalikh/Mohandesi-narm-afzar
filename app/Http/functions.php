@@ -14,7 +14,8 @@ class functions
         $answers[] = $quiz["question"]::where([['director', "!=", $answers[0]->director],['director', "!=", $quiz["question"]->director]])->inRandomOrder()->first();
         $answers[] = $quiz["question"]::where([['director', "!=", $answers[1]->director],['director', "!=", $answers[0]->director],['director', "!=", $quiz["question"]->director]])->inRandomOrder()->first();
         $answers[] = $quiz["question"];
-        $quiz['answer'] = shuffle($answers);
+        shuffle($answers);
+        $quiz['answer'] = $answers;
         dd($quiz);
         return $quiz;
     }
