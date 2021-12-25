@@ -19,7 +19,6 @@ class HomeController extends Controller
 
     public function index(){
         $quiz = functions::directorQuestion();
-        dd($quiz);
         return view('home', compact('quiz'));
     }
     public function answerValidation(Request $request){

@@ -9,6 +9,7 @@ class functions
      static function directorQuestion()
     {
         $movie = movie::all()->random(1);
+        dd($movie);
         $answers = $quiz = array();
         $answers[] = $movie::where('director', "!=", $movie->director)->inRandomOrder()->first();
         $answers[] = $movie::where([['director', "!=", $answers[0]->director],['director', "!=", $movie->director]])->inRandomOrder()->first();
