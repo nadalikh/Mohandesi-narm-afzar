@@ -31,6 +31,6 @@ class HomeController extends Controller
             $status = true;
         else
             $status = false;
-        $this->index($status);
+        return $this->index($status);
     }
 }
