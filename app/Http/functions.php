@@ -8,14 +8,14 @@ class functions
 {
      static function directorQuestion()
     {
-        $movie = movie::all()->random(1)->first();
-        $answers = $quiz = array();
-        $answers[] = $movie::where('director', "!=", $movie->director)->inRandomOrder()->first();
-        $answers[] = $movie::where([['director', "!=", $answers[0]->director],['director', "!=", $movie->director]])->inRandomOrder()->first();
-        $answers[] = $movie::where([['director', "!=", $answers[1]->director],['director', "!=", $answers[0]->director],['director', "!=", $movie->director]])->inRandomOrder()->first();
-        $answers[] = $movie;
-        $quiz['answer'] = shuffle($answers);
         $quiz["question"] = movie::all()->random(1)->first();
+        $answers = $quiz = array();
+        $answers[] = $quiz["question"]::where('director', "!=", $quiz["question"]->director)->inRandomOrder()->first();
+        $answers[] = $quiz["question"]::where([['director', "!=", $answers[0]->director],['director', "!=", $quiz["question"]->director]])->inRandomOrder()->first();
+        $answers[] = $quiz["question"]::where([['director', "!=", $answers[1]->director],['director', "!=", $answers[0]->director],['director', "!=", $quiz["question"]->director]])->inRandomOrder()->first();
+        $answers[] = $quiz["question"];
+        $quiz['answer'] = shuffle($answers);
+        dd($quiz);
         return $quiz;
     }
 }
