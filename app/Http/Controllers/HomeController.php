@@ -27,7 +27,7 @@ class HomeController extends Controller
             "director"=>"required",
             "movieId"=>"required"
         ]);
-        $movie = movie::whereimdbTitleId($req['movieId']);
+        $movie = movie::whereimdbTitleId($req['movieId'])->get();
         if($movie->imdb_title_id === $req['director'])
             $status = true;
         else
