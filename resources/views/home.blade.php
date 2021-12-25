@@ -17,7 +17,15 @@
 {{--                    {{ __('You are logged in!') }}--}}
 {{--                </div>--}}
 
+                @isset($status)
+                    @if($status)
+                        {{"<script>alert('Well done, you were true.Try this one!!!')</script>"}}
+                    @else
+                        {{"<script>alert('You were wrong. Compensate on this question :)')</script>"}}
 
+                    @endif
+
+                @endisset
                 <form method="get" action="{{route("directorAns")}}" class="form-check">
                     <p>Who is the director of {{$question->title}} movie which published in {{$question->year}} in {{$question->country}}?</p>
                     <input type="hidden" name="movieId" value="{{$question->imdb_title_id}}">

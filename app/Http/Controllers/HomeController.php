@@ -27,7 +27,11 @@ class HomeController extends Controller
             "director"=>"required",
             "movieId"=>"required"
         ]);
-        dd($req);
-
+        $movie = movie::whereimdbTitleId($req['movieId']);
+        if($movie->imdb_title_id === $req['director'])
+            $status = true;
+        else
+            $status = false;
+        return view('home', compact('status'));
     }
 }
