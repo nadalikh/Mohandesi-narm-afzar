@@ -16,7 +16,6 @@ class functions
         $answers[] = $quiz["question"];
         shuffle($answers);
         $quiz['answer'] = $answers;
-        dd($quiz);
         return $quiz;
     }
 }
