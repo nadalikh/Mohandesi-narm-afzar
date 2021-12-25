@@ -24,7 +24,8 @@ class HomeController extends Controller
     }
     public function answerValidation(Request $request){
         $req = $request->validate([
-            "director"=>"required"
+            "director"=>"required",
+            "movieId"=>"required"
         ]);
         dd($req);
 
