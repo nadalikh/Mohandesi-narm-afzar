@@ -16,14 +16,14 @@
 .light-button{
     color: white;
     border: 1px solid white;
-    padding: 10px 44px;
+    padding: 7px 25px;
     border-radius: 5px;
 }
 .links{
     position: absolute;
     top: 20%;
     left: 20px;
-    width: 25%;
+    width: 10%;
 }
 .links a:hover{
     color: #1d68a7;
