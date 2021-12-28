@@ -14,5 +14,11 @@
     height: 100vh;
 }
 .light-button{
+    color: white;
+    border: 1px solid white;
+    padding: 10px 44px;
+    border-radius: 5px;
+}
+.links{
 
 }

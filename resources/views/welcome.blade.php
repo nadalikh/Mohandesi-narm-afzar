@@ -21,14 +21,14 @@
         <div class="filling">
             <div class="dark-back">
                 @if (Route::has('login'))
-                    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    <div class="row links">
                         @auth
-                            <a href="{{ url('/home') }}" class="light-button">Home</a>
+                            <a href="{{ url('/home') }}" class="d-block col-12 light-button">Home</a>
                         @else
-                            <a href="{{ route('login') }}" class="light-button">Log in</a>
+                            <a href="{{ route('login') }}" class="d-block col-12 light-button">Log in</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="light-button">Register</a>
+                                <a href="{{ route('register') }}" class="d-block col-12 light-button">Register</a>
                             @endif
                         @endauth
                     </div>
