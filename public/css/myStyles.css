@@ -20,5 +20,10 @@
     border-radius: 5px;
 }
 .links{
-
+    position: absolute;
+    top: 40%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    /* border: 1px solid red; */
+    width: 20%;
 }

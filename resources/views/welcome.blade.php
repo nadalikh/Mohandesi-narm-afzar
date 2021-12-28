@@ -24,6 +24,8 @@
                     <div class="row links">
                         @auth
                             <a href="{{ url('/home') }}" class="d-block col-12 light-button">Home</a>
+                            <a href="{{ url('/home') }}" class="d-block col-12 light-button">Home</a>
+
                         @else
                             <a href="{{ route('login') }}" class="d-block col-12 light-button">Log in</a>
 
