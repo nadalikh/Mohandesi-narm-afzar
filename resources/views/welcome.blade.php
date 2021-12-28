@@ -25,12 +25,11 @@
                 @if (Route::has('login'))
                     <div class="row justify-content-between links">
                         @auth
-                            <a href="{{ url('/home') }}" class="d-block text-center my-3 col-5 light-button">Home</a>
+                            <a href="{{ url('/home') }}" class="d-block text-center my-2 col-12 light-button">Home</a>
                         @else
-                            <a href="{{ route('login') }}" class="d-block text-center my-3 col-5 light-button">Log in</a>
-
+                            <a href="{{ route('login') }}" class="d-block text-center my-2 col-12 light-button">Log in</a>
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="d-block text-center my-3 col-5 light-button">Register</a>
+                                <a href="{{ route('register') }}" class="d-block text-center my-2 col-12 light-button">Register</a>
                             @endif
                         @endauth
                     </div>
