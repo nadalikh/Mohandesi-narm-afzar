@@ -21,9 +21,7 @@
 }
 .links{
     position: absolute;
-    top: 40%;
-    left: 80%;
-    transform: translate(-50%, -50%);
-    /* border: 1px solid red; */
-    width: 20%;
+    top: 0%;
+    right: 50px;
+    width: 25%;
 }
