@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-dark text-light">quiz</div>
+                <div class="card-header border-light p-3 bg-dark text-light">quiz</div>
 
                 @isset($status)
                     @if($status)
@@ -15,7 +15,7 @@
                     @endif
 
                 @endisset
-                <form method="get" action="{{route("directorAns")}}" class="form-check bg-dark">
+                <form method="get" action="{{route("directorAns")}}" class="form-check bg-dark p-3">
                     <p class="text-light">Who is the director of {{$quiz["question"]->title}} movie which was published in {{$quiz["question"]->year}} in {{$quiz["question"]->country}}?</p>
                     <input type="hidden" name="movieId" value="{{$quiz["question"]->imdb_title_id}}">
                     <div class="row justify-content-around">
