@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">quiz</div>
+                <div class="card-header bg-dark">quiz</div>
 
                 @isset($status)
                     @if($status)
@@ -15,14 +15,14 @@
                     @endif
 
                 @endisset
-                <form method="get" action="{{route("directorAns")}}" class="form-check">
+                <form method="get" action="{{route("directorAns")}}" class="form-check bg-dark">
                     <p>Who is the director of {{$quiz["question"]->title}} movie which was published in {{$quiz["question"]->year}} in {{$quiz["question"]->country}}?</p>
                     <input type="hidden" name="movieId" value="{{$quiz["question"]->imdb_title_id}}">
                     <div class="row justify-content-around">
                         @foreach($quiz["answer"] as $answerKey => $answer)
                             <div class="col-5">
-                                <input class="form-check-input" type="radio" name="director" id="{{$answer->director}}" value="{{$answer->director}}">
-                                <label class="form-check-label" for="{{$answer->director}}">
+                                <input class="form-check-input text-light" type="radio" name="director" id="{{$answer->director}}" value="{{$answer->director}}">
+                                <label class="form-check-label text-light" for="{{$answer->director}}">
                                     {{$answer->director}}
                                 </label>
                             </div>
