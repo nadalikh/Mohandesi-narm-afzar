@@ -23,8 +23,8 @@
         <div class="filling">
             <div class="dark-back">
                 @if (Route::has('login'))
-                    <div class="row justify-content-between links">
-                        <h3>MY MOVIES</h3>
+                    <div class="row p-3 justify-content-between links">
+                        <h3 class="text-light font-weight-bold text-center bold col-12">MY MOVIES</h3>
                         @auth
                             <a href="{{ url('/home') }}" class="d-block text-center my-2 col-12 light-button">Home</a>
                         @else
