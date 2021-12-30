@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header border-light p-3 bg-dark text-light">quiz</div>
+                <div class="card-header border-light p-3 bg-dark text-light">Quiz</div>
 
                 @isset($status)
                     @if($status)
